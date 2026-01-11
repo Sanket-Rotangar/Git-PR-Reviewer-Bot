@@ -23,7 +23,7 @@ jobs:
           python-version: '3.9'
 
       - name: Install Dependencies
-        run: pip install openai
+        run: pip install openai requests
 
       - name: Generate Diff
         # We compare the PR branch (HEAD) vs the Main branch (origin/main)
