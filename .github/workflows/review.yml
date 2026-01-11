@@ -1,0 +1,36 @@
+    name: AI PR Reviewer
+
+permissions:
+  contents: read
+  pull-requests: write
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Fetch all history so we can compare versions
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install Dependencies
+        run: pip install openai
+
+      - name: Generate Diff
+        # We compare the PR branch (HEAD) vs the Main branch (origin/main)
+        # We save the output to 'changes.diff' so your python script can read it
+        run: git diff origin/main HEAD > changes.diff
+
+      - name: Run AI Reviewer
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: python bot.py
