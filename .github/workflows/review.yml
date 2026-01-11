@@ -33,4 +33,6 @@ jobs:
       - name: Run AI Reviewer
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub gives this for free!
+          PR_NUMBER: ${{ github.event.pull_request.number }}
         run: python bot.py
