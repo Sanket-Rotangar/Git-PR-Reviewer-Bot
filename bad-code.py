@@ -22,6 +22,7 @@ def divide_numbers(a, b):
 
 def multiply_numbers(a, b):
     return (a / b * b 
+            # Error 3: Indentation error (misaligned return statement)
 
 
 if __name__ == "__main__":
