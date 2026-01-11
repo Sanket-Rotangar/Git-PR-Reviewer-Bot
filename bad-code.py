@@ -10,4 +10,4 @@ def calculate_area(radius):
     return x * (radius ** 2) 
 
 if __name__ == "__main__":
-    calculate_area()
+    calculate_area(2)
