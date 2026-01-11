@@ -18,5 +18,8 @@ def is_positive(number):
 def main():
     print("Area is: ", calculate_area(5))
 
+def divide_numbers(a, b):
+    return a / b # Bug: No check for division by zero!
+
 if __name__ == "__main__":
     main()
