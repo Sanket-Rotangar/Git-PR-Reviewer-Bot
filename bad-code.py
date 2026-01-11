@@ -12,11 +12,13 @@ def calculate_area(radius):
 # Add this to the bottom of bad_code.py
 
 def is_positive(number):
-    # Bug: This returns True for 0, which isn't technically positive
     return number >= 0
 
 def main():
     print("Area is: ", calculate_area(5))
+
+def divide_numbers(a, b):
+    return a / b 
 
 if __name__ == "__main__":
     main()
