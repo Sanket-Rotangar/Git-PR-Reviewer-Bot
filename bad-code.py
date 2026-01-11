@@ -22,7 +22,7 @@ def divide_numbers(a, b):
 
 def multiply_numbers(a, b):
     return (a / b * b 
-
+# 
 
 if __name__ == "__main__":
     main()
